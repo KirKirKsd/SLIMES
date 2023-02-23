@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 
     public static float gunAngle;
     public Transform gun;
+
     public static Vector2 mousePos;
     public static Vector2 playerPos;
     public static float mirror = 1f;
