@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
     public static Vector2 mousePos;
     public static Vector2 playerPos;
     public static float mirror = 1f;
+
+    public Transform cursorPos;
     
     public Rigidbody2D rb;
 
@@ -28,7 +30,9 @@ public class Player : MonoBehaviour {
         
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         playerPos = new Vector2(transform.position.x, transform.position.y);
-        
+
+        cursorPos.position = new Vector3(mousePos.x, mousePos.y, 0);
+
         if (playerPos.x < mousePos.x) {
             transform.localScale = new Vector3(1f, 1f, 1f);
             mirror = 1f;
