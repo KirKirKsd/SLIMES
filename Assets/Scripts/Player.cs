@@ -19,6 +19,10 @@ public class Player : MonoBehaviour {
     
     public Rigidbody2D rb;
 
+    private void Start() {
+        Cursor.visible = false;
+    }
+
     private void Update() {
         movement = getInputs();
         
