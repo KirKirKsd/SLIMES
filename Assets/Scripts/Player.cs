@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public float moveSpeed = 3.5f;
 
     public static float gunAngle;
+    public Transform gun;
     public static Vector2 mousePos;
     public static Vector2 playerPos;
     public static float mirror = 1f;
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour {
             mirror = -1f;
         }
 
-        gunAngle = getAngleMouse(mousePos, transform.position);
+        gunAngle = getAngleMouse(mousePos, gun.position);
     }
 
     private void FixedUpdate() {
@@ -43,8 +44,8 @@ public class Player : MonoBehaviour {
         return new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
-    float getAngleMouse(Vector2 mousePos, Vector3 playerPos) {
-        float angle = Mathf.Atan2(mousePos.y - playerPos.y, mousePos.x - playerPos.x) * Mathf.Rad2Deg;
+    float getAngleMouse(Vector2 mousePos, Vector3 objectPos) {
+        float angle = Mathf.Atan2(mousePos.y - objectPos.y, mousePos.x - objectPos.x) * Mathf.Rad2Deg;
 
         return angle;
     }
