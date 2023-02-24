@@ -40,7 +40,7 @@ public class Player : MonoBehaviour {
         else {
             transform.localScale = new Vector3(-1f, 1f, 1f);
             mirror = -1f;
-        }
+        } 
 
         gunAngle = getAngleMouse(mousePos, gun.position);
     }
